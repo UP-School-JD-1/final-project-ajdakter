@@ -3,9 +3,7 @@ package ui;
 import constants.RestaurantColor;
 import menu.DrinkEnum;
 import menu.FoodEnum;
-
 import java.util.List;
-import java.util.Scanner;
 
 public class MenuDesign {
     public void showMenu(List<FoodEnum> foodEnumList,List<DrinkEnum> drinkEnumList){

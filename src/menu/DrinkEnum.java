@@ -28,8 +28,8 @@ public enum DrinkEnum {
     public float getDrinkPrice() {
         return drinkPrice;
     }
-    long drinkId;
-    String drinkName;
-    long preparationTime;
-    float drinkPrice;
+    private long drinkId;
+    private String drinkName;
+    private long preparationTime;
+    private float drinkPrice;
 }

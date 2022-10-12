@@ -27,7 +27,9 @@ public class Main {
         System.out.println(RestaurantColor.GREEN_UNDERLINED+"************************************************************"+RestaurantColor.RESET);
         System.out.println(RestaurantColor.GREEN_BOLD+"                Welcome to the restaurant."+RestaurantColor.RESET);
         System.out.println(RestaurantColor.GREEN_UNDERLINED+"************************************************************"+RestaurantColor.RESET);
-
+        /**
+         Show restaurant menu
+         **/
         menu.getMenu();
 
         ExecutorService exec = Executors.newFixedThreadPool(totalWorker);
@@ -37,22 +39,28 @@ public class Main {
         Random random = new Random();
         int customerNumber = random.nextInt(totalCustomer);
 
+        /**
+         Generate Customer treads
+         **/
         for(int i=1;i<=customerNumber;i++){
             exec.submit(new Customer(i,new Waiter(i)));
-
         }
-        for(int i=1;i<=3;i++) {
+        /**
+         Create random order and generate waiter treads
+         **/
+        for(int i=1;i<=waiters;i++) {
             List<FoodEnum> foods =new ArrayList<FoodEnum>();
-
             foods.add(menu.getFoodData().get(random.nextInt(totalFood)));
             foods.add(menu.getFoodData().get(random.nextInt(totalFood)));
             DrinkEnum drink =menu.getDrinkData().get(random.nextInt(totalDrink));
-
             Order order=new Order(foods,drink);
+
             waiterExecutor.submit(new Waiter(i, new Customer(i,order), new Chef(i)));
         }
-
-        for(int i=1;i<=2;i++) {
+        /**
+        Generate Chef treads
+         **/
+        for(int i=1;i<=chefs;i++) {
             chefExecutor.submit(new Chef(i, new Waiter(i)));
         }
 

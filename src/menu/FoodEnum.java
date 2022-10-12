@@ -14,11 +14,11 @@ public enum FoodEnum {
         this.foodPrice = foodPrice;
         this.foodDescription=foodDescription;
     }
-    long foodId;
-    String foodName;
-    long preparationTime;
-    float foodPrice;
-    String foodDescription;
+    private long foodId;
+    private String foodName;
+    private long preparationTime;
+    private float foodPrice;
+    private String foodDescription;
 
     public long getFoodId() {
         return foodId;
@@ -26,10 +26,6 @@ public enum FoodEnum {
 
     public String getFoodName() {
         return foodName;
-    }
-
-    public long getPreparationTime() {
-        return preparationTime;
     }
 
     public float getFoodPrice() {

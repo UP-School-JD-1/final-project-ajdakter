@@ -12,9 +12,6 @@ public class Menu {
 
     MenuDesign menuDesign;
 
-    public Menu() {
-    }
-
     public void getMenu(){
      menuDesign.showMenu(getFoodData(),  getDrinkData());
 

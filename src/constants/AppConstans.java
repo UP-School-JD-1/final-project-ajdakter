@@ -1,5 +1,7 @@
 package constants;
-
+/**
+ Keeps constants in the application
+ **/
 public class AppConstans {
     public static  int waiters=2;
     public static  int chefs=3;
